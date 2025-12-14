@@ -14,10 +14,32 @@ cmake_install.cmake
 *.elf
 *.map
 *.lst
-*.txt
-!src/CMakeLists.txt
-*.uf2
 
+#*.txt
+#!prompt_ai.txt
+#!src/CMakeLists.txt
+
+#*.uf2
+
+
+_deps
+picotool
+pioasm-install
+
+*.ninja*.*
+build.ninja
+*.ld
+build_*
+
+
+*.dis
+*.hex
+*.bin
+
+makefile
 
 CMakeCache.txt
 /build/
+
+*.cmd
+*.sh
