@@ -1,0 +1,27 @@
+NEIN : git clone https://github.com/FreeRTOS/FreeRTOS-Kernel.git
+
+
+git submodule add https://github.com/FreeRTOS/FreeRTOS-Kernel.git
+
+read FreeRTOS-Kernel/examples/README.md 
+copy FreeRTOS-Kernel\examples\template_configuration\FreeRTOSConfig.h src
+
+read FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/README.md
+copy FreeRTOS-Kernel\portable\ThirdParty\GCC\RP2040\FreeRTOS_Kernel_import.cmake src
+
+add
+include(FreeRTOS_Kernel_import.cmake)
+
+
+edit FreeRTOS_Kernel_import.cmake
+------------------------------
+
+    if (SEARCH_PASS)
+        # ports may be moving to submodule in the future
+        set(FREERTOS_KERNEL_RP2040_RELATIVE_PATH "portable/ThirdParty/GCC")
+        set(FREERTOS_KERNEL_RP2040_BACK_PATH "../../../..")    
+    else()
+        set(FREERTOS_KERNEL_RP2040_RELATIVE_PATH "portable/ThirdParty/GCC")
+        set(FREERTOS_KERNEL_RP2040_BACK_PATH "../../../..")
+    endif()
+----------------------------------

@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.13)
 set(CMAKE_C_STANDARD 11)
 
 set(FREERTOS_KERNEL_PATH ../FreeRTOS-Kernel)
-set(FREERTOS_KERNEL_RP2040_RELATIVE_PATH portable/ThirdParty/GCC )
+set(FREERTOS_KERNEL_RP2040_RELATIVE_PATH portable/ThirdParty/GCC/RP2040 )
 
 include(pico_sdk_import.cmake)
 project(FreeRTOS_TEST C CXX ASM)
@@ -14,9 +14,9 @@ pico_sdk_init()
 
 # Pull in FreeRTOS
 #include($ENV{FREERTOS_KERNEL_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
-#include(FreeRTOS_Kernel_import.cmake)
+include(FreeRTOS_Kernel_import.cmake)
 
-include(../FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
+#include(../FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
 
 
 # Add executable. Default name is the project name, version 0.1
