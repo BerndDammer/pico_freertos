@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.13)
 set(CMAKE_C_STANDARD 11)
 
 set(FREERTOS_KERNEL_PATH ../FreeRTOS-Kernel)
-set(FREERTOS_KERNEL_RP2040_RELATIVE_PATH portable/ThirdParty/GCC )
+set(FREERTOS_KERNEL_RP2040_RELATIVE_PATH portable/ThirdParty/GCC  )
 
 include(pico_sdk_import.cmake)
 project(FreeRTOS_TEST C CXX ASM)
